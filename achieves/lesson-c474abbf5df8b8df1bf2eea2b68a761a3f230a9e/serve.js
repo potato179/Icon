@@ -1,0 +1,227 @@
+const http = require('http');
+const mysql = require('mysql');
+const express = require('express');
+//const cookieParser = require('cookie-parser');
+const util = require('util');
+
+const app = express();
+
+const hostname = '127.0.0.1';
+var port = 3000;
+
+process.argv.forEach(function(item, index){
+
+    console.log("argv %d, %s", index, item);
+
+    if( item == '--port'){
+        port = Number(process.argv[index + 1]);
+    }
+
+});
+
+
+const con = mysql.createConnection({
+    host: "localhost",
+    user: "happy",
+    password: "123",
+    database: "lessondb"
+});
+
+console.log(`로그인 성공`);
+
+con.connect(function(err) {
+    if (err) throw err;
+    console.log(`연결 성공`);
+});
+
+app.use('/public', express.static('public'));
+
+app.listen(port, hostname, () => {
+    console.log(`http://${hostname}:${port}/ 에서 서버 작동중`);
+});
+
+app.get('/', function(req, res, next){
+    res.sendFile('lesson.html', {root: __dirname});
+});
+
+app.get('/lesson.html', function(req, res, next){
+    res.sendFile('lesson.html', {root: __dirname});
+});                                                                                                 
+
+app.get('/login.html', function(req, res, next){
+    res.sendFile('login.html', {root: __dirname});
+});
+
+app.get('/join.html', function(req, res, next){
+    res.sendFile('join.html', {root: __dirname});
+});
+
+app.get('/logout', function(req, res, next){
+    //쿠키삭제
+    res.cookie("userEmail", "");
+
+    res.sendFile('lesson.html', {root: __dirname});
+})
+
+app.get('/login', function(req, res, next){
+    console.log(req.query.email);
+    
+    var email = req.query.email;
+    var pw = req.query.pw;
+    var q = "SELECT * FROM member WHERE email = '" + email + "'";
+    con.query(q, function (err, result) {
+        if (err) throw err;
+        console.log(result);
+
+        if(result[0] === undefined){
+            res.send({
+                condition: "fail",
+                message: "존재하지 않은 유저입니다."
+            })
+        }
+        else{
+            //존재하는 유저
+            if(result[0].password === pw){
+                // 쿠키저장
+                res.cookie("userEmail", email);
+                res.cookie("username", result[0].name);
+
+                res.send({
+                    condition: "success",
+                    message: "로그인되었습니다."
+                })
+            }
+            else{
+                res.send({
+                    condition: "fail",
+                    message: "비밀번호가 틀렸습니다."
+                })
+            }
+        }
+        console.log(`query 성공함`)
+    });
+});
+
+app.get('/join', function(req, res, next){
+    var name = req.query.name;
+    var email = req.query.email;
+    var pw = req.query.pw;
+    var phone = req.query.phone;
+
+    // 중복 체크
+    var f = "SELECT * FROM member WHERE email = '" + email + "'";
+    con.query(f, function (err, result) {
+        if (err) throw err;
+        console.log(result);
+
+        if(result[0] === undefined){
+
+            var q = util.format("INSERT INTO member (name, email, password, phone)VALUES ('%s', '%s', '%s', '%s')", name, email, pw, phone);
+
+           /*var q = "INSERT INTO member (name, email, password, phone)VALUES" + "("
+            + "'" + name + "'," 
+            + "'" + email + "'," 
+            + "'" + pw + "',"
+            + "'" + phone + "');";*/
+            con.query(q, function (err, result) {
+                if(err) throw err;
+                console.log(result);
+                res.send({
+                    condition: "join",
+                    message: "회원가입이 완료되었습니다."
+                });
+            }); 
+        }
+        else{
+            res.send({
+                condition: "fail",
+                message: "이미 있는 유저입니다. 다시하세요"
+            });
+        }
+        
+    });
+});
+
+app.get('/get_questions', function(req, res, next){
+    var s = util.format(`select * from question`);
+    con.query(s, function(err, result){
+        if(err) throw err;
+        res.send(result);
+    });
+});
+
+app.get('/view_question', function(req, res, next){
+    console.log(req.query.id);
+    var s = util.format("SELECT * FROM question where id = %d", req.query.id);
+    con.query(s, function(err, result){
+        if(err) throw err;
+        if(result[0] === undefined){
+            res.send(`존재하지 않는 질문입니다.`);
+            return;
+        }
+        res.send(result[0]);
+    })
+});
+
+app.get('/modify_question', function(req, res, next){
+    var c = req.query.content;
+    var id = req.query.id;
+    var s = util.format(`UPDATE question
+SET content = '%s'
+WHERE id = "%d";`, c, id);
+    con.query(s, function (err, result) {
+        if(err) throw err;
+        console.log(result);
+        res.send({
+            message: `수정이 완료되었습니다.`
+        });
+    }); 
+});
+
+app.get('/writequestion.html', function(req, res, next){
+    res.sendFile('writequestion.html', {root: __dirname});
+});
+
+app.get('/writequestion', function(req, res, next){
+    var title = req.query.title;
+    var content = req.query.content;
+    var q = util.format("INSERT INTO question (title, content) VALUES ('%s', '%s')", title, content);
+    con.query(q, function (err, result) {
+        if(err) throw err;
+        console.log(result);
+        res.send({
+            condition: "register",
+            message: "등록이 완료되었습니다."
+        });
+    });
+});
+
+app.get('/delete', function(req, res, next){
+    var id = req.query.id;
+    var q = util.format("DELETE FROM question WHERE id = '%d';", id);
+    con.query(q, function(err, result){
+        if(err) throw err;
+        console.log(result)
+        res.send({
+            condition: "delete",
+            message: "삭제되었습니다."
+        });
+    })
+});
+
+app.get('/write_comment', function(req, res, next){
+    var comment = req.query.comments;
+    var id = req.query.id;
+    var q = util.format(`UPDATE question
+    SET comments = '%s'
+    WHERE id = '%d';
+    `, comment, id)
+    con.query(q, function(err, result){
+        if(err) throw err;
+        console.log(result)
+        res.send({
+            condition: "comment",
+            message: "댓글이 등록되었습니다.."
+        });
+    })
+});
