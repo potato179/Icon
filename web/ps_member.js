@@ -1,4 +1,4 @@
-const mysql_con = require('./mysql_con.js');
+const mysql_con = require('./public/js/mysql_con.js');
 const util = require('util');
 var con = mysql_con.con;
 
