@@ -17,7 +17,6 @@
         <link rel = "stylesheet" href = "https://potato179.github.io/style/potato-min.css">
     </head>
     <body onload = "onbodyload();">
-
         <button id = "log_in_out" onclick = 'window.location.href = "login.html"'>로그인</button>
         <button id = "btn_join" onclick = 'window.location.href = "join.html"'>회원가입</button>
         <button id = "writeitems" onclick = 'window.location.href = "writeitems.html"'>글쓰기</button>
@@ -42,32 +41,10 @@
                 </tr>
                 </thead>
                 <tbody id = "q_list">
-                    <!--
-                <tr>
-                    <th scope = "row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope = "row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope = "row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>-->
                 </tbody>
             </table>
         </div>
-
-        <script type = "text/javascript" src = "https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script src = "../public/js/jquery.cookie.js"></script>
-        <script src = "../public/js/cutil.js"></script>    
         <script>
             function onbodyload(){
                 var userEmail = $.cookie("userEmail");
@@ -132,31 +109,28 @@
                     data: {id: id}, 
                     dataType: "json", 
                     success :  function(data, status, xhr){
-                        console.log(data);
-
                         $('#q_table').html('');
 
                         var items_info = "<br>제목: <input id='title' size=50 value='" + data.title + "'>" + "<br><br>";
                         items_info += "내용: <textarea id='context' rows=4 cols=100>" + data.context+ "</textarea>";
-
                         items_info += "<br><br><br><br><br>";
                         items_info += "<button onclick=window.location.href='/'>목록으로</button>";
-                        items_info += cutil.format("<button class = 'edit' onclick = edit({1})>수정하기</button>", data.id);
-                        items_info += cutil.format("<button class = 'delete' onclick = delete_items({1})>삭제하기</button>", data.id);
-                        items_info += cutil.format("<button class = 'delete' onclick = press_like({1})>좋아요</button>", data.id);
+                        items_info += `<button class = 'edit' onclick = edit(${data.id})>수정하기</button>`;
+                        items_info += `<button class = 'delete' onclick = delete_items(${data.id})>삭제하기</button>`;
+                        items_info += `<button class = 'delete' onclick = press_like(${data.id})>좋아요</button>`;
                         items_info += "<br><br><br><br><br>";
-                        items_info += cutil.format("댓글: <textarea id='comment' rows=3 cols=100>{1}</textarea>", data.comment);
-                        items_info += cutil.format("<button class = 'comment' onclick = comment({1})>댓글달기</button>", data.id);
+                        items_info += `댓글: <textarea id='comment' rows=3 cols=100>${data.comment}</textarea>`;
+                        items_info += `<button class = 'comment' onclick = comment(${data.id})>댓글달기</button>`;
                         items_info += "<br><br><br><br><br>";
-                        items_info += "좋아요 누른 사람: "
-                        items_info += `${data.likes}`
+                        items_info += "좋아요 누른 사람: ";
+                        items_info += `${data.likes}`;
 
                         if(data.comment != undefined){
                             var commentList = JSON.parse(data.comment);
                             if(commentList){
                                 commentList.forEach(function(element, index){
                                     console.log(element);
-                                    items_info += cutil.format("<br><div>{1}: {2}</div>", element.name, element.text);
+                                    items_info += `<br><div>${element.name}: ${element.text}</div>`;
                                 });
                             }
                         }
@@ -224,9 +198,8 @@
 
             function press_like(id){
                 var email = $.cookie("userEmail");
-                if(!email) return alert(`로그인을 하세요`);
+                if(!email) return alert("로그인이 필요합니다.");
 
-                console.log(`좋아요를 눌렀습니다.`);
                 var ajaxData = { 
                     type: "GET", 
                     url : "press_like",

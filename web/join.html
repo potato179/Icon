@@ -26,7 +26,6 @@
             <button type = "button" onclick = "join();">회원가입</button>
             <a href = "./index.html">취소</a>
         </form>
-        <script type = "text/javascript" src = "https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script>
             function join() {
                 var name = $('#name').val();
@@ -48,8 +47,7 @@
                     success :  onSuccess,
                     error: onError
                 };
-
-                $.ajax( ajaxData );
+                $.ajax(ajaxData);
             }
 
             function onSuccess (data, status, xhr) { 
