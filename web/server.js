@@ -49,5 +49,4 @@ app.get('/index.html', function(req, res, next){
 
 url_list.forEach(function(element, index){
     app.get(element.url, element.ps);
-
 });
