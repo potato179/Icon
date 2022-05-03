@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "en">
     <head>
         <meta charset = "UTF-8">
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
         <title>main</title>
         <link rel = "icon" href = "./img/dimigoLogo.png">
-        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script type = "text/javascript" src = "https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity = "sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin = "anonymous">
         <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel = "stylesheet" integrity = "sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin = "anonymous">
         <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity = "sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin = "anonymous"></script>
         <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity = "sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin = "anonymous"></script>
         <script src = "https://kit.fontawesome.com/06fb83cb17.js" crossorigin = "anonymous"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com"> 
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+        <link rel = "preconnect" href = "https://fonts.googleapis.com"> 
+        <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin> 
+        <link href = "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel = "stylesheet">
         <link rel = "stylesheet" href = "https://potato179.github.io/style/potato-min.css">
     </head>
     <body onload = "onbodyload();">
@@ -21,64 +21,42 @@
         <button id = "log_in_out" onclick = 'window.location.href = "login.html"'>로그인</button>
         <button id = "btn_join" onclick = 'window.location.href = "join.html"'>회원가입</button>
         <button id = "writeitems" onclick = 'window.location.href = "writeitems.html"'>글쓰기</button>
-        <div class="container">
-            <div class="text-center">
+        <div class = "container">
+            <div class = "text-center">
             </footer>
         </div>
 
-        <!--<div class="container">
-            <div class="text-center">
-                <div class = "search_frame">
-                    <input id="google" class = "search_bar" type="text" placeholder="검색할 정보를 입력하세요" aria-label="Search">
-                    <!--<button type = "button" onclick = "search();" class = "help"><span>구글검색</span></button>
-                    <span class = "search_button" onclick = "search();">
-
-                    </span>
-                    <span class = "search_icon"onclick = "search();">
-                            
-                    </span>
-                </div>
-                <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-                <script>
-                    
-                    function search(){
-                        var google = $('#google').val();
-                        window.open('https://www.google.com/search?q=' + google)
-                    }
-                </script>
-            </footer>
-        </div> -->
         <div id = "itemss">
         </div>
-        <div id="main">
-            <div id="view_q">
+        <div id = "main">
+            <div id = "view_q">
 
             </div>
-            <table id="q_table" class="table">
+            <table id = "q_table" class = "table">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">글쓴이</th>
-                    <th scope="col">질문</th>
-                    <th scope="col">상태</th>
+                    <th scope = "col">#</th>
+                    <th scope = "col">글쓴이</th>
+                    <th scope = "col">질문</th>
+                    <th scope = "col">상태</th>
                 </tr>
                 </thead>
-                <tbody id="q_list">
+                <tbody id = "q_list">
                     <!--
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope = "row">1</th>
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>
                 </tr>
                 <tr>
-                    <th scope="row">2</th>
+                    <th scope = "row">2</th>
                     <td>Jacob</td>
                     <td>Thornton</td>
                     <td>@fat</td>
                 </tr>
                 <tr>
-                    <th scope="row">3</th>
+                    <th scope = "row">3</th>
                     <td>Larry</td>
                     <td>the Bird</td>
                     <td>@twitter</td>
@@ -87,7 +65,7 @@
             </table>
         </div>
 
-        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script type = "text/javascript" src = "https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script src = "../public/js/jquery.cookie.js"></script>
         <script src = "../public/js/cutil.js"></script>    
         <script>
@@ -127,7 +105,7 @@
                         var tempStr = "";
                         data.forEach(function(item, index){
                             tempStr += "<tr onclick='Viewitems(" + item.id + ")'>";
-                            tempStr += '<th scope="row">' + item.id + '</th>';
+                            tempStr += '<th scope = "row">' + item.id + '</th>';
                             tempStr += "<td>" + item.writer + "</td>";
                             tempStr += "<td>" + item.title + "</td>";
                             tempStr += "<td>" + item.state + "</td>";
