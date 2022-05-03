@@ -18,25 +18,25 @@
     </head>
     <body>
         <form style="text-align: center;" class="form-signin">
-            <h2 class="h3 mb-3 font-weight-normal">로그인을 하세요</h2>
-                <input id="email" name="email" style="margin-bottom: 10px;" type="email"  class="form-control" placeholder="사용자 이메일" required></input>
-                <input id="pw" name="pw" type="password" class="form-control" placeholder="패스워드" required></input>
-            <button class="btn btn-lg btn-outline-success  btn-block" type="button" onclick="signin();">로그인</button>
-            <a class="btn btn-lg btn-outline-primary btn-block" href="./join.html">회원가입</a>
+            <h2 class="h3 mb-3 font-weight-normal">질문을 하세요</h2>
+                <input id = "title" name = "title" type = "text" class = "form-control" placeholder = "제목" required></input>
+                <input id = "context" name = "context" type = "text" class = "form-control" placeholder = "내용" type = "tel"></input>
+            <button class="btn btn-lg btn-outline-success  btn-block" type="button" onclick = "postitems();">질문하기</button>
             <a class="btn btn-lg btn-block" href="./index.html">취소</a>
         </form>
-
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-        <script>
+        <script src = "../public/js/jquery.cookie.js"></script>
 
-            function signin() {
-                var email = $('#email').val();
-                var pw = $('#pw').val();
-                var sendData =  { email: email, pw: pw };
+        <script>
+            function postitems() {
+                var title = $('#title').val();
+                var context = $('#context').val();
+                var username = $.cookie("username");
+                var sendData =  {title: title, context: context, writer: username};
 
                 var ajaxData = { 
                     type: "GET", 
-                    url : "login",
+                    url : "writeitems",
                     data: sendData, 
                     dataType: "json", 
                     success :  onSuccess,
@@ -47,19 +47,11 @@
             }
 
             function onSuccess (data, status, xhr) { 
-
                 console.log(data);
-
-                if(data.condition == "success"){
-                    // 로그인 성공 메인화면 가게 해준다.
+                if(data.condition == "register"){
                     alert(data.message);        
                     window.location.href = "index.html"
                 }
-                else if(data.condition == "fail"){
-                    //존재하지 않은 유저 || 비밀번호 불일치
-                    alert(data.message);
-                }
-
             }
 
             function onError (jqXHR, textStatus, errorThrown) { 

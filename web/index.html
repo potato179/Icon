@@ -1,52 +1,44 @@
- <!DOCTYPE html>
- <html lang = "en">
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset = "UTF-8">
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-        <title></title>
-        <script type = "text/javascript" src = "https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <title>main</title>
+        <link rel = "icon" href = "./img/dimigoLogo.png">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity = "sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin = "anonymous">
         <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel = "stylesheet" integrity = "sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin = "anonymous">
         <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity = "sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin = "anonymous"></script>
         <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity = "sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin = "anonymous"></script>
         <script src = "https://kit.fontawesome.com/06fb83cb17.js" crossorigin = "anonymous"></script>
-        <link rel = "preconnect" href = "https://fonts.googleapis.com"> 
-        <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin> 
-        <link href = "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel = "stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
         <link rel = "stylesheet" href = "https://potato179.github.io/style/potato-min.css">
     </head>
     <body onload = "onbodyload();">
-        <div class = "">
-            <nav class = "my-2 my-md-0 mr-md-3">
-                <button id = "log_in_out" type = "button" onclick = 'window.location.href = "login.html"'>로그인</button>
-                <button id = "btn_join" type = "button" onclick = 'window.location.href = "join.html"'>회원가입</button>
-                <button id = "writequestion" type = "button" onclick = 'window.location.href = "writequestion.html"'>글쓰기</button>
-    
-            </nav>
-        </div>
-    
-        <div class = "container">
-            <div class = "text-center">
-                <form style = "display: inline;" class = "">
-                      <input style = "width: 400px;" class = "" type = "text" placeholder = "검색할 정보를 입력하세요" aria-label = "Search">
-                      <button class = "" type = "submit">검색</button>
-                </form>
+
+        <button id = "log_in_out" onclick = 'window.location.href = "login.html"'>로그인</button>
+        <button id = "btn_join" onclick = 'window.location.href = "join.html"'>회원가입</button>
+        <button id = "writeitems" onclick = 'window.location.href = "writeitems.html"'>글쓰기</button>
+        <div class="container">
+            <div class="text-center">
             </footer>
         </div>
-    
-        <!--<div class = "container">
-            <div class = "text-center">
+
+        <!--<div class="container">
+            <div class="text-center">
                 <div class = "search_frame">
-                    <input id = "google" class = "search_bar" type = "text" placeholder = "검색할 정보를 입력하세요" aria-label = "Search">
+                    <input id="google" class = "search_bar" type="text" placeholder="검색할 정보를 입력하세요" aria-label="Search">
                     <!--<button type = "button" onclick = "search();" class = "help"><span>구글검색</span></button>
                     <span class = "search_button" onclick = "search();">
-    
+
                     </span>
                     <span class = "search_icon"onclick = "search();">
                             
                     </span>
                 </div>
-                <script type = "text/javascript" src = "https://code.jquery.com/jquery-1.12.4.min.js"></script>
+                <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
                 <script>
                     
                     function search(){
@@ -56,51 +48,54 @@
                 </script>
             </footer>
         </div> -->
-        <div id = "questions">
+        <div id = "itemss">
         </div>
-        <div id = "main">
-            <div id = "view_q">
-    
+        <div id="main">
+            <div id="view_q">
+
             </div>
-            <table id = "q_table" class = "table">
+            <table id="q_table" class="table">
                 <thead>
-                  <tr>
-                    <th scope = "col">#</th>
-                    <th scope = "col">글쓴이</th>
-                    <th scope = "col">질문</th>
-                    <th scope = "col">주제</th>
-                  </tr>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">글쓴이</th>
+                    <th scope="col">질문</th>
+                    <th scope="col">상태</th>
+                </tr>
                 </thead>
-                <tbody id = "q_list">
+                <tbody id="q_list">
                     <!--
-                  <tr>
-                    <th scope = "row">1</th>
+                <tr>
+                    <th scope="row">1</th>
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope = "row">2</th>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
                     <td>Jacob</td>
                     <td>Thornton</td>
                     <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope = "row">3</th>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
                     <td>Larry</td>
                     <td>the Bird</td>
                     <td>@twitter</td>
-                  </tr>-->
+                </tr>-->
                 </tbody>
-              </table>
+            </table>
         </div>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script src = "../public/js/jquery.cookie.js"></script>
+        <script src = "../public/js/cutil.js"></script>    
         <script>
             function onbodyload(){
                 var userEmail = $.cookie("userEmail");
                 if(userEmail != '' && userEmail != null){
                     console.log("쿠키 존재: " + userEmail);
-    
+
                     $("#log_in_out").html("로그아웃");
                     $("#log_in_out").css("color", "#4fee30");
                     $("#log_in_out").attr("onclick", 'window.location.href = "logout"');
@@ -112,127 +107,162 @@
                 }
                 else{
                     console.log("쿠키가 존재하지 않습니다");
-    
+
                     $("#log_in_out").html("로그인");
                     $("#log_in_out").attr("onclick", 'window.location.href = "login.html"');
                 }
-    
-    
-    
+
+
+
                 var ajaxData = { 
                     type: "GET", 
-                    url : "get_questions",
+                    url : "get_itemss",
                     data: {}, 
                     dataType: "json", 
                     success :  function(data, status, xhr){
                         console.log(data);
-    
+
                         
-                        //$("#questions").html("daflasdhfkadhfakds");
+                        //$("#itemss").html("daflasdhfkadhfakds");
                         var tempStr = "";
                         data.forEach(function(item, index){
-                            tempStr += "<tr onclick='ViewQuestion(" + item.id + ")'>";
-                            tempStr += '<th scope = "row">' + item.id + '</th>';
-                            tempStr += "<td>" + item.name + "</td>";
+                            tempStr += "<tr onclick='Viewitems(" + item.id + ")'>";
+                            tempStr += '<th scope="row">' + item.id + '</th>';
+                            tempStr += "<td>" + item.writer + "</td>";
                             tempStr += "<td>" + item.title + "</td>";
-                            tempStr += "<td>" + item.category + "</td>";
+                            tempStr += "<td>" + item.state + "</td>";
                             tempStr += "</tr>"
                         });
-    
+
                         $("#q_list").html(tempStr);
-    
+
                     },
                     error:  function(jqXHR, textStatus, errorThrown){
-    
+
                     }
                 };
-    
+
                 $.ajax(ajaxData);
             }
-    
-            function ViewQuestion(id){
+
+            function Viewitems(id){
                 console.log(`질문: ` + id);
-    
+
                 var ajaxData = { 
                     type: "GET", 
-                    url : "view_question",
+                    url : "view_items",
                     data: {id: id}, 
                     dataType: "json", 
                     success :  function(data, status, xhr){
                         console.log(data);
-    
+
                         $('#q_table').html('');
-    
-                        var question_info = "<br>제목: <input id='title' size=50 value='" + data.title + "'>" + "<br><br>";
-                        question_info += "내용: <textarea id='content' rows=4 cols=100>" + data.content+ "</textarea>";
-                        question_info += "<br><br><br><br><br>";
-                        question_info += "<button onclick=window.location.href='/'>목록으로</button>";
-                        question_info += cutil.format("<button class = 'edit' onclick = edit({1})>수정하기</button>", data.id);
-                        question_info += cutil.format("<button class = 'delete' onclick = delete_question({1})>삭제하기</button>", data.id);
-                        question_info += "<br><br><br><br><br>";
-                        question_info += cutil.format("댓글: <textarea id='comment' rows=3 cols=100>{1}</textarea>", data.comment);
-                        question_info += cutil.format("<button class = 'comment' onclick = comment({1})>댓글달기</button>", data.id);
-    
-                        $('#view_q').html(question_info);
+
+                        var items_info = "<br>제목: <input id='title' size=50 value='" + data.title + "'>" + "<br><br>";
+                        items_info += "내용: <textarea id='context' rows=4 cols=100>" + data.context+ "</textarea>";
+
+                        items_info += "<br><br><br><br><br>";
+                        items_info += "<button onclick=window.location.href='/'>목록으로</button>";
+                        items_info += cutil.format("<button class = 'edit' onclick = edit({1})>수정하기</button>", data.id);
+                        items_info += cutil.format("<button class = 'delete' onclick = delete_items({1})>삭제하기</button>", data.id);
+                        items_info += cutil.format("<button class = 'delete' onclick = press_like({1})>좋아요</button>", data.id);
+                        items_info += "<br><br><br><br><br>";
+                        items_info += cutil.format("댓글: <textarea id='comment' rows=3 cols=100>{1}</textarea>", data.comment);
+                        items_info += cutil.format("<button class = 'comment' onclick = comment({1})>댓글달기</button>", data.id);
+                        items_info += "<br><br><br><br><br>";
+                        items_info += "좋아요 누른 사람: "
+                        items_info += `${data.likes}`
+
+                        if(data.comment != undefined){
+                            var commentList = JSON.parse(data.comment);
+                            if(commentList){
+                                commentList.forEach(function(element, index){
+                                    console.log(element);
+                                    items_info += cutil.format("<br><div>{1}: {2}</div>", element.name, element.text);
+                                });
+                            }
+                        }
+
+                        $('#view_q').html(items_info);
                     },
                     error:  function(jqXHR, textStatus, errorThrown){
-    
+
                     }
                 };
-    
+
                 $.ajax( ajaxData );
             }
-    
+
             function edit(id){
-                // var c = $('#content').val(); //jquery를 사용할 경우
-                var c = document.getElementById("content").value;
+                // var c = $('#context').val(); //jquery를 사용할 경우
+                var c = document.getElementById("context").value;
                 var ajaxData = { 
                     type: "GET", 
-                    url : "modify_question",
-                    data: {id: id, content: c}, 
+                    url : "modify_items",
+                    data: {id: id, context: c}, 
                     dataType: "json", 
                     success :  function(data, status, xhr){
                         console.log(data);
                         alert(data.message);
-                        window.location.href = "lesson.html";
+                        window.location.href = "index.html";
                     },
                     error:  function(jqXHR, textStatus, errorThrown){
-    
+
                     }
                 };
                 $.ajax(ajaxData);
             }
-    
-            function delete_question(id){
+
+            function delete_items(id){
                 var ajaxData = {
                     type: "GET",
-                    url: "delete",
+                    url: "del",
                     data: {id: id},
                     dataType: "json",
                     success: function(data, status, xhr){
                         console.log(data)
                         alert(data.message);
-                        window.location.href = "lesson.html";
+                        window.location.href = "index.html";
                     }
                 };
                 $.ajax(ajaxData);
             }
-    
+
             function comment(id){
                 var comments = document.getElementById("comment").value;
                 var ajaxData = {
                     type: "GET",
                     url: "write_comment",
-                    data: {comments: comments, id: id},
+                    data: {comments: comments, id: id, email: $.cookie("userEmail"), userName: $.cookie("username")},
                     dataType: "json",
                     success: function(data, status, xhr){
                         console.log(data)
                         alert(data.message);
-                        window.location.href = "lesson.html";
+                        window.location.href = "index.html";
                     }
                 }
                 $.ajax(ajaxData)
             }
+
+            function press_like(id){
+                var email = $.cookie("userEmail");
+                if(!email) return alert(`로그인을 하세요`);
+
+                console.log(`좋아요를 눌렀습니다.`);
+                var ajaxData = { 
+                    type: "GET", 
+                    url : "press_like",
+                    data: {id: id, email: $.cookie("userEmail")}, 
+                    dataType: "json", 
+                    success: function(data, status, xhr){
+                        console.log(data)
+                        alert(data.message);
+                    }
+                };
+
+                $.ajax(ajaxData);
+            }
         </script>
+
     </body>
- </html>
+</html>
