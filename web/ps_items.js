@@ -1,27 +1,18 @@
-const util = require('util');
 const mysql_con = require('./public/js/mysql_con.js');
 var con = mysql_con.con;
-/**
- * 질문 리스트를 반환하는 함수.
- * @return 질문들의 배열(리스트)
- */
+
 function get_itemss(req, res, next){
-    var s = util.format(`select * from items`);
-    con.query(s, function(err, result){
+    var q = `select * from items`;
+    con.query(q, function(err, result){
         if(err) throw err;
         res.send(result);
     });
 }
 
-/**
- * 질문 태이블에서 해당 레코드를 선택해 질문을 보여줌
- * @param {number} id - 질문의 아이디
- * @return 질문 레코드
- */
 function view_items(req, res, next){
     console.log(req.query.id);
-    var s = util.format("SELECT * FROM items where id = %d", req.query.id);
-    con.query(s, function(err, result){
+    var q = `select * from items where id = "${req.query.id}";`
+    con.query(q, function(err, result){
         if(err) throw err;
         if(result[0] === undefined){
             res.send(`존재하지 않는 질문입니다.`);
@@ -34,10 +25,8 @@ function view_items(req, res, next){
 function modify_items(req, res, next){
     var c = req.query.context;
     var id = req.query.id;
-    var s = util.format(`UPDATE items
-SET context = '%s'
-WHERE id = "%d";`, c, id);
-    con.query(s, function (err, result) {
+    var q = `update items set context = "${c} where id = "${id}";`;
+    con.query(q, function (err, result) {
         if(err) throw err;
         console.log(result);
         res.send({
@@ -50,8 +39,8 @@ function writeitems(req, res, next){
     var writer = req.query.writer;
     var title = req.query.title;
     var context = req.query.context;
-    var qi = `insert into items (writer, title, context, state) values ("${writer}", "${title}", "${context}", "대기")`;
-    con.query(qi, function (err, result) {
+    var q = `insert into items (writer, title, context, state) values ("${writer}", "${title}", "${context}", "대기")`;
+    con.query(q, function (err, result) {
         if(err) throw err;
         console.log(result);
         res.send({
@@ -63,7 +52,7 @@ function writeitems(req, res, next){
 
 function del(req, res, next){
     var id = req.query.id;
-    var q = util.format("DELETE FROM items WHERE id = '%d';", id);
+    var q = util.format(`delete from items where id = "${id}";`);
     con.query(q, function(err, result){
         if(err) throw err;
         console.log(result)
@@ -92,14 +81,12 @@ function write_comment(req, res, next){
         jsonData.push({name: userName, email: email, text: comment});
 
         var jsonString = "";
-
         jsonString += "JSON_ARRAY(";
 
         var count = jsonData.length;
         jsonData.forEach(function(element, index){
             jsonString += `json_object("name", "${element.nname}, "text", "${element.text}", "email", "${element.email}")`;
-            if(index < count - 1 )
-                jsonString += ",";
+            if(index < count - 1) jsonString += ",";
         });
     
         jsonString += ")";
@@ -112,8 +99,7 @@ function write_comment(req, res, next){
                 condition: "comment",
                 message: "댓글이 등록되었습니다.."
             });
-        })
-
+        });
     });
 }
 
@@ -133,16 +119,12 @@ function press_like(req, res, next){
         if(email_list.includes(email)) return res.send({message: "이미 눌렀습니다."});
         email_list.push(email);
 
-        var s = `UPDATE items
-        set likes = JSON_ARRAY(`;
+        var s = `update items set likes = json_array(`;
         var count = email_list.length;
 
         email_list.forEach(function(element, index){
-            s += `"`;
-            s += element; 
-            s += `"`;
-
-            if(index < count - 1) s+= ","
+            s += `"${element}`;
+            if(index < count - 1) s += ",";
         });
         s += `) where id = ${id};`;
         console.log(s);
@@ -154,10 +136,7 @@ function press_like(req, res, next){
                 message: "좋아요를 눌렀습니다."
             });
         });
-        
-        
-
-    })
+    });
 }
 
 exports.get_itemss = get_itemss;
