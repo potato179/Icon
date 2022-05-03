@@ -1,5 +1,5 @@
 const util = require('util');
-const mysql_con = require('./mysql_con.js');
+const mysql_con = require('./public/js/mysql_con.js');
 var con = mysql_con.con;
 /**
  * 질문 리스트를 반환하는 함수.
