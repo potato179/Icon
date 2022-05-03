@@ -28,21 +28,16 @@ var url_list = [
 
 process.argv.forEach(function(item, index){
     console.log("argv %d, %s", index, item);
-
     if( item == '--port'){
         port = Number(process.argv[index + 1]);
     }
-
 });
-
-var con = mysql_con.con;
 
 app.use('/public', express.static('public'));
 
 app.listen(port, hostname, () => {
     console.log(`http://${hostname}:${port}/ 에서 서버 작동중`);
 });
-
 
 app.get('/', function(req, res, next){
     res.sendFile('index.html', {root: __dirname});
