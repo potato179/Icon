@@ -2,3 +2,4 @@
 ./web/package.json
 /web/node_modules
 ./web/public/js/mysql_com.js
+./.DS_Store
