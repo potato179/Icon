@@ -12,7 +12,7 @@ function login_html(req, res, next){
 function login(req, res, next){
     var email = req.query.email;
     var pw = req.query.pw;
-    var q = `SELECT * FROM users WHERE email = "${email}"`;
+    var q = `select * from users where email = "${email}"`;
     con.query(q, function (err, result) {
         if (err) throw err;
 
@@ -51,7 +51,7 @@ function join(req, res, next){
     var name = req.query.name;
     var email = req.query.email;
     var pw = req.query.pw;
-    var q = `SELECT * FROM users WHERE email = "${email}"`;
+    var q = `select * from users where email = "${email}"`;
     con.query(q, function (err, result) {
         if (err) throw err;
 
