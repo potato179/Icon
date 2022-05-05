@@ -39,7 +39,7 @@ function writeitems(req, res, next){
     var writer = req.query.writer;
     var title = req.query.title;
     var context = req.query.context;
-    var q = `insert into items (writer, title, context, state) values ("${writer}", "${title}", "${context}", "대기")`;
+    var q = `insert into items (writer, title, context, state, comments) values ("${writer}", "${title}", "${context}", "대기", json_object())`;
     con.query(q, function (err, result) {
         if(err) throw err;
         console.log(result);
@@ -76,12 +76,12 @@ function write_comment(req, res, next){
     var q = `select comments from items where id = ${id}`
     con.query(q, function(err, result){
         if(err) throw err;
-
+        console.log(result[0].comments);
         var jsonData = JSON.parse(result[0].comments);
         jsonData.push({name: userName, email: email, text: comment});
 
         var jsonString = "";
-        jsonString += "JSON_ARRAY(";
+        jsonString += "json_array(";
 
         var count = jsonData.length;
         jsonData.forEach(function(element, index){

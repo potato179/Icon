@@ -92,11 +92,9 @@
                         $("#q_list").html(tempStr);
 
                     },
-                    error:  function(jqXHR, textStatus, errorThrown){
-
+                    error: function(jqXHR, textStatus, errorThrown){
                     }
                 };
-
                 $.ajax(ajaxData);
             }
 
@@ -108,8 +106,8 @@
                     url : "view_items",
                     data: {id: id}, 
                     dataType: "json", 
-                    success :  function(data, status, xhr){
-                        $('#q_table').html('');
+                    success: function(data, status, xhr){
+                        $('#q_table').html("");
 
                         var items_info = "<br>제목: <input id='title' size=50 value='" + data.title + "'>" + "<br><br>";
                         items_info += "내용: <textarea id='context' rows=4 cols=100>" + data.context+ "</textarea>";
@@ -137,29 +135,25 @@
 
                         $('#view_q').html(items_info);
                     },
-                    error:  function(jqXHR, textStatus, errorThrown){
-
+                    error: function(jqXHR, textStatus, errorThrown){
                     }
                 };
-
-                $.ajax( ajaxData );
+                $.ajax(ajaxData);
             }
 
             function edit(id){
-                // var c = $('#context').val(); //jquery를 사용할 경우
-                var c = document.getElementById("context").value;
+                var c = $('#context').val();
                 var ajaxData = { 
                     type: "GET", 
                     url : "modify_items",
                     data: {id: id, context: c}, 
                     dataType: "json", 
-                    success :  function(data, status, xhr){
+                    success: function(data, status, xhr){
                         console.log(data);
                         alert(data.message);
                         window.location.href = "index.html";
                     },
-                    error:  function(jqXHR, textStatus, errorThrown){
-
+                    error: function(jqXHR, textStatus, errorThrown){
                     }
                 };
                 $.ajax(ajaxData);
@@ -214,6 +208,5 @@
                 $.ajax(ajaxData);
             }
         </script>
-
     </body>
 </html>
