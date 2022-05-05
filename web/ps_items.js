@@ -86,7 +86,7 @@ function write_comment(req, res, next){
         var count = jsonData.length;
         jsonData.forEach(function(element, index){
             jsonString += `json_object("name", "${element.nname}, "text", "${element.text}", "email", "${element.email}")`;
-            if(index < count - 1) jsonString += ",";
+            if(index < count-1) jsonString += ",";
         });
     
         jsonString += ")";
