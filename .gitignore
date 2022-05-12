@@ -1,6 +1,6 @@
 ./web/package-lock.json
 ./web/package.json
 /web/node_modules
-./web/public/js/mysql_com.js
+./web/public/js/mysql_con.js
 ./.DS_Store
 ./test.html
