@@ -28,7 +28,7 @@ var url_list = [
 
 process.argv.forEach(function(item, index){
     console.log("argv %d, %s", index, item);
-    if( item == '--port'){
+    if(item == '--port'){
         port = Number(process.argv[index + 1]);
     }
 });
