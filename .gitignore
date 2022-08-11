@@ -7,3 +7,4 @@ web/node_modules/
 web/public/js/mysql_con.js
 test.html
 web/index_.html
+.vscode
