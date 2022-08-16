@@ -1,21 +1,16 @@
 <!doctype html>
 <html lang = "en">
     <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
         <title>I'con</title>
+        <script type = "text/javascript" src = "https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <link rel = "canonical" href = "https://getbootstrap.com/docs/5.2/examples/carousel/">
-        <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel = "stylesheet"
-            integrity = "sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin = "anonymous">
-        <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity = "sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-            crossorigin = "anonymous"></script>
-        <link href = "/docs/5.2/dist/css/bootstrap.min.css" rel = "stylesheet"
-            integrity = "sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin = "anonymous">
-        <meta name = "theme-color" content = "#4FAF5A">
-        <script src = "https://kit.fontawesome.com/06fb83cb17.js" crossorigin = "anonymous"></script>
-        <link rel = "preconnect" href = "https://fonts.googleapis.com">
-        <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
-        <link href = "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap" rel = "stylesheet">
-        <link rel = "stylesheet" href = "https://potato179.github.io/style/potato-min.css">
+        <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel = "stylesheet" integrity = "sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin = "anonymous">
+        <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity = "sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin = "anonymous"></script>
+        <script src = "https://kit.fontawesome.com/06fb83cb17.js" crossorigin = "anonymous"></script>      
+        <link rel = "stylesheet" href = "https://potato179.github.io/style/potato-min.css">    
         <style>
             body {
                 font-family: 'Noto Sans KR', sans-serif;
@@ -37,53 +32,37 @@
                 height: 32rem;
             }
         </style>
-        <link href = "carousel.css" rel = "stylesheet">
     </head>
 
     <body>
-        <header>
-            <nav class = "navbar navbar-expand-md fixed-top"
-                style = "background-color: rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px);">
-                <div class = "container">
-                    <a class = "navbar-brand" href = "#"><img src = "./public/img/symbol.png" style = "width: 2.25em;"></a>
-                    <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navbarCollapse" aria-controls = "navbarCollapse" aria-expanded = "false" aria-label = "Toggle navigation">
-                        <span class = "navbar-toggler-icon"></span>
-                    </button>
-                    <div class = "collapse navbar-collapse" id = "navbarCollapse">
-                        <ul class = "navbar-nav me-auto mb-2 mb-md-0">
-                            <li class = "nav-item">
-                                <a style = "color: #4FAF5A; font-size: 1.25em;" class = "blod nav-link active" aria-current = "page" href = "#">홈</a>
-                            </li>
-                            <li class = "nav-item">
-                                <a style = "color: gray; font-size: 1.25em;" class = "nav-link active" aria-current = "page" href = "#">아이디어</a>
-                            </li>
-                            <li class = "nav-item">
-                                <a style = "color: gray; font-size: 1.25em;" class = "nav-link active" aria-current = "page" href = "#">투자</a>
-                            </li>
-                            <li class = "nav-item">
-                                <a style = "color: gray; font-size: 1.25em;" class = "nav-link active" aria-current = "page" href = "#">펀딩</a>
-                            </li>
-                            <li class = "nav-item">
-                                <a style = "color: gray; font-size: 1.25em;" class = "nav-link active" aria-current = "page" href = "./introduce.html">I'con 소개</a>
-                            </li>
-                        </ul>
-                        <form class = "col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role = "search" style = "background: linear-gradient(271.52deg, #D9D9D9 -4.33%, #F5F5F5 -4.32%, #D9D9D9 109.72%);
-                            box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.15);
-                            border-radius: 38.5px;">
-                            <input type = "search" style = "background: transparent; border: none;" placeholder = "Search..."
-                                aria-label = "Search">
-                            <button style = "background-color: transparent;"><img src = "./public/img/img_search.png"
-                                    style = "width: 21px;"></button>
+        <header class = "navbar navbar-expand-md fixed-top p-3" style = "background-color: rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px);">
+            <div class = "container-fluid">
+                <div class = "d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" style = "width: 100%;">
+                    <a href = "/" class = "d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
+                        <svg class = "bi me-2" width = "40" height = "32" role = "img" aria-label = "Bootstrap"><use xlink:href = "#bootstrap"></use></svg>
+                    </a>
+            
+                    <ul class = "nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href = "#" class = "bold nav-link px-2" style = "color: #4FAF5A;">Home</a></li>
+                        <li><a href = "#" class = "gray nav-link px-2">Features</a></li>
+                        <li><a href = "#" class = "gray nav-link px-2">Pricing</a></li>
+                        <li><a href = "#" class = "gray nav-link px-2">FAQs</a></li>
+                        <li><a href = "#" class = "gray nav-link px-2">About</a></li>
+                    </ul>
+            
+                    <div class = "d-flex" style = "float: right;">
+                        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" style="background: linear-gradient(271.52deg, #D9D9D9 -4.33%, #F5F5F5 -4.32%, #D9D9D9 109.72%); box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.15); border-radius: 38.5px;">
+                            <input type="search" style="background: transparent; border: none;" placeholder="Search..." aria-label="Search">
+                            <button style="background-color: transparent;"><img src="./public/img/img_search.png" style="width: 21px;"></button>
                         </form>
                         <div class = "text-end">
-                            <a style = "font-size: 1.25em; color: #666666;" id = "log_in_out" href = "./login.html"
-                                onclick = "window.location.href = './login.html'">로그인</a>
-                            <a style = "font-size: 1.25em; color: #666666;" id = "btn_join" href = "./join.html">회원가입</a>
+                            <button type = "button" class = "btn btn-outline-light me-2">Login</button>
+                            <button type = "button" class = "btn btn-warning">Sign-up</button>
                         </div>
                     </div>
                 </div>
-            </nav>
-        </header>
+            </div>
+          </header>
 
         <main>
             <div id = "myCarousel" class = "carousel slide" data-bs-ride = "carousel">
