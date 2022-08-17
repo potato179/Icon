@@ -6,6 +6,5 @@ web/node_modules/
 .sass-cache
 web/public/js/mysql_con.js
 test.html
-web/header.html
 web/index_.html
 .vscode
