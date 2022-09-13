@@ -19,6 +19,19 @@
             body:not(header){
                 background-color: #F1F1F1;
             }
+
+            .input-field {
+                padding: 0.5em;
+            }
+            .input-field input {
+                padding: 0.5em;
+                border: 0;
+                border-bottom: 1px solid #747474;
+                outline: none;
+                -webkit-transition: all .2s;
+                transition: all .2s;
+            }
+
         </style>
     </head>
     <body>
@@ -67,30 +80,43 @@
             </ul>
         </header>
         <br><br><br>
-        <form>
-            <fieldset disabled>
-                <legend>Disabled fieldset example</legend>
-                <div class="mb-3">
-                    <label for="disabledTextInput" class="form-label">Disabled input</label>
-                    <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
-                </div>
-                <div class="mb-3">
-                    <label for="disabledSelect" class="form-label">Disabled select menu</label>
-                    <select id="disabledSelect" class="form-select">
-                    <option>Disabled select</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
-                    <label class="form-check-label" for="disabledFieldsetCheck">
-                        Can't check this
-                    </label>
+        <div class="modal-content rounded-4 shadow" style = "margin-left: 10em; width: 30em;">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h2 class="fw-bold mb-0">로그인</h2>
+            </div>
+      
+            <div class="modal-body p-5 pt-0">
+              <form class="">
+                
+                <div class="content">
+                    <div class="input-field">
+                        <input type="email" placeholder="이메일" autocomplete="nope">
                     </div>
+                    <div class="input-field">
+                        <input type="password" placeholder="비밀번호" autocomplete="new-password">
+                    </div>
+                    <a href="#" class="link">Forgot Your Password?</a>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </fieldset>
-          </form>
+
+                <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign up</button>
+                <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+                <hr class="my-4">
+                <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
+                <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3" type="submit">
+                  <svg class="bi me-1" width="16" height="16"><use xlink:href="#twitter"></use></svg>
+                  Sign up with Twitter
+                </button>
+                <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submit">
+                  <svg class="bi me-1" width="16" height="16"><use xlink:href="#facebook"></use></svg>
+                  Sign up with Facebook
+                </button>
+                <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
+                  <svg class="bi me-1" width="16" height="16"><use xlink:href="#github"></use></svg>
+                  Sign up with GitHub
+                </button>
+              </form>
+            </div>
+        </div>
 
         <form style = "text-align: center;" class = "form-signin">
             <h2 class = "h3 mb-3 font-weight-normal">로그인을 하세요</h2>
