@@ -20,8 +20,12 @@
                 background-color: #F1F1F1;
             }
 
+            input{
+                background-color: #F1F1F1;
+            }
+
             .input-field {
-                padding: 0.5em;
+                padding-bottom: 1.5em;
             }
             .input-field input {
                 padding: 0.5em;
@@ -85,47 +89,24 @@
                 <h2 class="fw-bold mb-0">로그인</h2>
             </div>
       
-            <div class="modal-body p-5 pt-0">
-              <form class="">
-                
-                <div class="content">
-                    <div class="input-field">
-                        <input type="email" placeholder="이메일" autocomplete="nope">
+            <div class="modal-body p-5 pt-3">
+                <form class="">
+                    <div class="content">
+                        <div class="input-field">
+                            <input id = "email" type="email" placeholder="이메일" autocomplete="nope">
+                        </div>
+                        <div class="input-field">
+                            <input id = "pw" type="password" placeholder="비밀번호" autocomplete="new-password">
+                        </div>
+                        <a href="#" class="link">아이디/비밀번호 찾기</a>
                     </div>
-                    <div class="input-field">
-                        <input type="password" placeholder="비밀번호" autocomplete="new-password">
+                    <div style = "margin-top: 3em;">
+                        <button class="w-100 mb-2 btn btn-lg rounded-3 white" type="submit" style = "background-color: #4FAF5A;" onclick = "signin();">로그인</button>
+                        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-secondary" type="submit" href = "./join.html">회원가입</button>
                     </div>
-                    <a href="#" class="link">Forgot Your Password?</a>
-                </div>
-
-                <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign up</button>
-                <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
-                <hr class="my-4">
-                <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
-                <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3" type="submit">
-                  <svg class="bi me-1" width="16" height="16"><use xlink:href="#twitter"></use></svg>
-                  Sign up with Twitter
-                </button>
-                <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submit">
-                  <svg class="bi me-1" width="16" height="16"><use xlink:href="#facebook"></use></svg>
-                  Sign up with Facebook
-                </button>
-                <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
-                  <svg class="bi me-1" width="16" height="16"><use xlink:href="#github"></use></svg>
-                  Sign up with GitHub
-                </button>
-              </form>
+                </form>
             </div>
         </div>
-
-        <form style = "text-align: center;" class = "form-signin">
-            <h2 class = "h3 mb-3 font-weight-normal">로그인을 하세요</h2>
-                <input id = "email" type = "email" placeholder = "이메일" required></input>
-                <input id = "pw" type = "password" placeholder = "비밀번호" required></input>
-            <button type = "button" onclick = "signin();">로그인</button>
-            <a href = "./join.html">회원가입</a>
-            <a href = "./index.html">취소</a>
-        </form>
         <script>
             function signin(){
                 var email = $('#email').val();
