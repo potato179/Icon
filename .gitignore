@@ -2,4 +2,5 @@ web/logs
 *.log
 *.tgz
 web/node_modules/
+web/public/js/mysql_con.js
 .DS_Store
