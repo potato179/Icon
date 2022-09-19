@@ -1,12 +1,12 @@
 const mysql_con = require('./public/js/mysql_con.js');
 var con = mysql_con.con;
 
-function join_html(req, res, next){
-    res.sendFile('join.html', {root: __dirname});
-}
-
 function login_html(req, res, next){
     res.sendFile('login.html', {root: __dirname});
+}
+
+function join_html(req, res, next){
+    res.sendFile('join.html', {root: __dirname});
 }
 
 function login(req, res, next){
