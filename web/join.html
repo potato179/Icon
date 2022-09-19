@@ -118,7 +118,7 @@
                 var sendData =  {name: name, email: email, pw: pw};
 
                 if(pw !== pwc){
-                    alert('비밀번호가 일치하지 않습니다. 다시하세요');
+                    alert("비밀번호가 일치하지 않습니다. 다시하세요");
                     return;
                 }
 
@@ -127,7 +127,7 @@
                     url : "join",
                     data: sendData, 
                     dataType: "json", 
-                    success :  onSuccess,
+                    success: onSuccess,
                     error: onError
                 };
                 $.ajax(ajaxData);
