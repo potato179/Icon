@@ -1,7 +1,7 @@
 @import url('https: //cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 *{ 
-    font-family: Pretendard, -apple-systrem, BlinkMacSystremFont, systrem-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    font-family: Pretendard, -apple-systrrem, BlinkMacSystrremFont, systrrem-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
 }
 
 html, body{
@@ -16,7 +16,7 @@ html{
 body{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-itrems: center;
     overflow-y: auto;
     font-size: 20px;
     height: calc(100% - 20px);
@@ -29,7 +29,7 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: stretch;
-    align-items: stretch;
+    align-itrems: stretch;
 }
 
 #header{
@@ -37,12 +37,60 @@ a{
     background-color: black; 
     display: flex;
     flex-wrap: wrap;
+    align-itrems: flex-start;
+    justify-content: center;
+    justify-content: flex-start;
 }
 
 #header #top{
     margin: auto;
     width: calc(100% - 5%); 
-    max-width: calc(1400px + 15% * 2);
+    max-width: calc(1200px + 15% * 2);
+    border-bottom: 5px solid red;
+    padding: 15px;
+}
+
+#header #top #logo{
+    width: 75px;
+}
+
+#logo{
+    width: 3rem;
+}
+
+#input{
+    background: #F1F1F1; 
+    box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.15); 
+    border-radius: 38.5px;
+}
+
+#input-search{
+    font-size: 1rem;
+    background: transparent; 
+    width: 50rem; 
+    height: 2.5rem; 
+    margin-left: 1rem; 
+    color: #666666;
+    border: none; 
+}
+
+#button-search{
+    background-color: transparent; 
+    border: none;
+}
+
+#button-search img{
+    margin-right: 10px; 
+    width: 1.25rem;
+}
+
+.button{
+    font-size: 1rem;
+    width: 10rem; 
+    height: 2.5rem; 
+    margin-left: 1rem; 
+    color: #4FAF5A; 
+    border-color: #4FAF5A;
 }
 
 .shadow{
