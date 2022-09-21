@@ -168,3 +168,40 @@ li a{
 #idea-container-1-list{
     margin-top: 1.25rem;
 }
+
+.card{
+    width: 12.5rem;
+    background-color: aqua;
+    border-radius: 1rem;
+    float: left;
+    margin-right: 1.5em;
+}
+
+.card-image{
+    height: 11rem;
+}
+
+.card-content{
+    padding: 0.5rem;
+}
+
+.card-content-title{
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-content-author{
+    font-size: 0.75rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.card-content-progress{
+    font-size: 1rem;
+    margin: 0;
+    width: auto;
+    color: #4FAF5A;
+    border: 0.1rem solid #4FAF5A;
+    border-radius: 1rem;
+    text-align: center;
+}
