@@ -36,6 +36,7 @@ a{
     width: 100%;
     background-color: white;
     border-bottom: 1px solid #DCDCDC;
+    margin-left: 0;
 }
 
 #header-top{
@@ -127,4 +128,43 @@ li a{
     color: #4FAF5A; 
     border-color: #4FAF5A;
     border-radius: 0.5rem;
+}
+
+#banner{
+    width: 100%;
+    height: 37.5rem;
+    background: #666666;
+}
+
+#idea-container{
+    margin-top: 8rem;
+    width: calc(90% - 5%); 
+    max-width: calc(1200px + 15% * 2);
+}
+
+.section-text{
+    width: auto;
+    background-color: #4FAF5A;
+    color: white;
+    border-radius: 2rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 1rem;
+    padding-right: 1em;
+}
+
+#idea-container-1{
+    float: left;
+    background-color: yellow;
+    width: 60%;
+}
+
+#idea-container-2{
+    float: right;
+    background-color: blue;
+    width: 35%;
+}
+
+#idea-container-1-list{
+    margin-top: 1.25rem;
 }
