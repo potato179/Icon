@@ -259,7 +259,11 @@ hr{
     border-top: 1px solid #979797;
 }
 
-#middlebanner{
-    margin: 6rem;
+#middlebanner-top{
+    margin-top: 6rem;
     width: 100%;
+}
+
+#footer{
+    background-color: #F7F7F7;
 }
