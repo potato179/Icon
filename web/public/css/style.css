@@ -16,7 +16,7 @@ html{
 body{
     display: flex;
     flex-direction: column;
-    align-itrems: center;
+    align-items: center;
     overflow-y: auto;
     font-size: 20px;
     height: calc(100% - 20px);
@@ -29,46 +29,37 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: stretch;
-    align-itrems: stretch;
+    align-items: stretch;
 }
 
 #header{
-    width: 100%;
-    background-color: black; 
+    background-color: white;
     display: flex;
     flex-wrap: wrap;
-    align-itrems: flex-start;
+    align-items: flex-start;
     justify-content: center;
     justify-content: flex-start;
-}
-
-#header #top{
-    margin: auto;
-    width: calc(100% - 5%); 
+    width: calc(90% - 5%); 
     max-width: calc(1200px + 15% * 2);
-    border-bottom: 5px solid red;
+    border-bottom: 1px solid #DCDCDC;
     padding: 15px;
 }
 
-#header #top #logo{
-    width: 75px;
-}
-
 #logo{
-    width: 3rem;
+    width: 2.5rem;
 }
 
 #input{
     background: #F1F1F1; 
     box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.15); 
     border-radius: 38.5px;
+    height: 2.5rem; 
 }
 
 #input-search{
     font-size: 1rem;
     background: transparent; 
     width: 50rem; 
-    height: 2.5rem; 
     margin-left: 1rem; 
     color: #666666;
     border: none; 
@@ -84,9 +75,17 @@ a{
     width: 1.25rem;
 }
 
+#button-container{
+    width: 100%;
+    text-align: right;
+    float: right;
+}
+
 header{
+    background-color: white;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    width: 100%;
 }
 
 ul{
@@ -97,9 +96,14 @@ ul{
     list-style: none;
 }
 
+li{
+    width: 20%;
+}
+
 li a{
     flex-basis: 0;
     flex-grow: 1;
+    width: 100%;
     text-align: center;
 }
 
@@ -108,14 +112,15 @@ li a{
     width: 10rem; 
     height: 2.5rem; 
     margin-left: 1rem; 
+    background: transparent;
     color: #4FAF5A; 
     border-color: #4FAF5A;
 }
 
 .shadow{
-    box-shadow:0vw 0vw 3.3333333333333335vw 0vw rgba(0,0,0,0.1);
+    box-shadow: 0vw 0vw 3.3333333333333335vw 0vw rgba(0,0,0,0.1);
 }
   
 .shadow-text{
-    text-shadow:0vw 0vw 6.666666666666667vw rgba(0,0,0,1);
+    text-shadow: 0vw 0vw 6.666666666666667vw rgba(0,0,0,1);
 }
