@@ -18,7 +18,7 @@ body{
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
-    font-size: 20px;
+    font-size: 1.25em;
     height: calc(100% - 20px);
 }
 
@@ -32,17 +32,21 @@ a{
     align-items: stretch;
 }
 
-#header{
+#header-top-container{
+    width: 100%;
     background-color: white;
+    border-bottom: 1px solid #DCDCDC;
+}
+
+#header-top{
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     width: calc(90% - 5%); 
     max-width: calc(1200px + 15% * 2);
-    border-bottom: 1px solid #DCDCDC;
-    padding: 15px;
+    padding: 1.5rem;
 }
 
 #logo{
@@ -59,13 +63,14 @@ a{
 #input-search{
     font-size: 1rem;
     background: transparent; 
-    width: 50rem; 
-    margin-left: 1rem; 
+    width: 40rem; 
+    margin-left: 1rem;
     color: #666666;
     border: none; 
 }
 
 #button-search{
+    height: 2.5rem;
     background-color: transparent; 
     border: none;
 }
@@ -76,16 +81,17 @@ a{
 }
 
 #button-container{
-    width: 100%;
-    text-align: right;
     float: right;
 }
 
-header{
+#header-bottom-container{
     background-color: white;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    box-shadow: 0 0.25rem 0.12rem -0.12rem rgba(0,0,0,0.1);
     width: 100%;
+}
+
+#header-bottom{
+    padding: 1rem;
 }
 
 ul{
@@ -108,19 +114,12 @@ li a{
 }
 
 .button{
-    font-size: 1rem;
+    font-size: 1.25rem;
     width: 10rem; 
     height: 2.5rem; 
     margin-left: 1rem; 
     background: transparent;
     color: #4FAF5A; 
     border-color: #4FAF5A;
-}
-
-.shadow{
-    box-shadow: 0vw 0vw 3.3333333333333335vw 0vw rgba(0,0,0,0.1);
-}
-  
-.shadow-text{
-    text-shadow: 0vw 0vw 6.666666666666667vw rgba(0,0,0,1);
+    border-radius: 0.5rem;
 }
