@@ -165,13 +165,18 @@ li a{
 #idea-container-1-card{
     width: 22.5%;
     border-radius: 1rem;
+    margin-bottom: 2.5rem;
     float: left;
+    display: flex;
+    flex-direction: column;
     margin-right: 2.5%;
+    box-shadow: 0.25rem 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.1);
 }
 
 #idea-container-1-card-image{
-    display: block;
-    height: 11rem;
+    border-radius: 1rem 1rem 0 0;
+    width: 100%;
+    height: 7.5em;
 }
 
 #idea-container-1-card-content{
@@ -207,6 +212,7 @@ li a{
     display: flex;
     justify-content: space-between;
     margin-bottom: 1.5rem;
+    box-shadow: 0.25rem 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.1);
 }
 
 #idea-container-2-card-image{
@@ -244,4 +250,11 @@ li a{
     margin-top: 0;
     margin-bottom: 0.5rem;
     float: left;
+}
+
+hr{
+    margin: 6rem;
+    width: calc(90% - 5%); 
+    max-width: calc(1200px + 15% * 2);
+    border-top: 1px solid #979797;
 }
