@@ -142,8 +142,8 @@ li a{
     max-width: calc(1200px + 15% * 2);
 }
 
-.section-text{
-    width: auto;
+#section-text{
+    display: inline-block;
     background-color: #4FAF5A;
     color: white;
     border-radius: 2rem;
@@ -159,44 +159,29 @@ li a{
     width: 60%;
 }
 
-#idea-container-2{
-    float: right;
-    background-color: blue;
-    width: 35%;
-}
-
 #idea-container-1-list{
     margin-top: 1.25rem;
 }
 
-.card{
-    width: 12.5rem;
+#idea-container-1-card{
+    width: 22.5%;
     background-color: aqua;
     border-radius: 1rem;
     float: left;
-    margin-right: 1.5em;
+    margin-right: 2.5%;
 }
 
-.card-image{
+#idea-container-1-card-image{
+    display: block;
     height: 11rem;
 }
 
-.card-content{
+#idea-container-1-card-content{
     padding: 0.5rem;
+    float: left;
 }
 
-.card-content-title{
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
-
-.card-content-author{
-    font-size: 0.75rem;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-}
-
-.card-content-progress{
+#idea-container-1-card-content-progress{
     font-size: 1rem;
     margin: 0;
     width: auto;
@@ -204,4 +189,63 @@ li a{
     border: 0.1rem solid #4FAF5A;
     border-radius: 1rem;
     text-align: center;
+}
+
+#idea-container-2{
+    float: right;
+    background-color: blue;
+    width: 35%;
+}
+
+#idea-container-2-list{
+    margin-top: 1.25rem;
+}
+
+#idea-container-2-card{
+    width: 100%;
+    height: 5em;
+    background-color: aqua;
+    border-radius: 1rem;
+    float: left;
+    margin-right: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+#idea-container-2-card-image{
+    display: block;
+    width: 12rem;
+    border-radius: 1rem 0 0 1rem;
+}
+
+#idea-container-2-card-content{
+    margin-left: 0.75rem;
+    margin-right: 0.75em;
+    padding: 0.5rem;
+    width: 100%;
+    float: left;
+}
+
+#idea-container-2-card-content-progress{
+    font-size: 1rem;
+    margin: 0;
+    width: 10rem;
+    color: #4FAF5A;
+    border: 0.1rem solid #4FAF5A;
+    border-radius: 1rem;
+    text-align: center;
+    float: right;
+}
+
+#content-title{
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+#content-author{
+    font-size: 0.75rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    float: left;
 }
