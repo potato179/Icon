@@ -94,11 +94,15 @@ a{
     padding: 1rem;
 }
 
+#header-current{
+    color: #4FAF5A;
+    font-weight: bold;
+}
+
 ul{
     display: flex;
     flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
+    margin: 0;
     list-style: none;
 }
 
