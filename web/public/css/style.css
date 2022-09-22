@@ -100,7 +100,7 @@ a{
     font-weight: bold;
 }
 
-ul{
+#header-bottom ul{
     display: flex;
     flex-wrap: wrap;
     margin: 0;
@@ -108,7 +108,7 @@ ul{
     list-style: none;
 }
 
-li{
+#header-bottom li{
     width: 20%;
 }
 
@@ -264,6 +264,57 @@ hr{
     width: 100%;
 }
 
-#footer{
-    background-color: #F7F7F7;
+#middlebanner{
+    width: 100%;
+}
+
+#footer-top-container{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: calc(90% - 5%); 
+    max-width: calc(1200px + 15% * 2);
+}
+
+#footer-top{
+    padding: 0.1rem;
+}
+
+#footer-top ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+#footer-top li{
+    color: gray;
+    margin-right: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+#footer-bottom-container{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: calc(90% - 5%); 
+    max-width: calc(1200px + 15% * 2);
+}
+
+#footer-top{
+    padding: 0.1rem;
+}
+
+#footer-logo{
+    height: 2rem;
+}
+
+#footer-content{
+    color: #666666;
 }
