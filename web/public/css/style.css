@@ -253,7 +253,7 @@ li a{
 }
 
 hr{
-    margin: 6rem;
+    margin-top: 6rem;
     width: calc(90% - 5%); 
     max-width: calc(1200px + 15% * 2);
     border-top: 1px solid #979797;
