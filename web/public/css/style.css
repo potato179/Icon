@@ -337,3 +337,68 @@ hr{
     border-radius: 2.75rem;
     box-shadow: 0.25rem 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.1);
 }
+
+#logincontent{
+    margin: 3.75rem;
+}
+
+#logintitle{
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#name, #email, #phone, #pw, #pwc{
+    margin-top: 2.5rem;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #D9D9D9; 
+    font-size: 1.25rem;
+}
+
+#button-login{
+    margin-top: 3.75rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: #4FAF5A;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+}
+
+#login-section-text{
+    margin-top: 3.75rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    color: #ACACAC;
+}
+
+#button-join{
+    width: 100%;
+    padding: 1rem;
+    background-color: transparent;
+    border: 1px solid #ACACAC;
+    border-radius: 2rem;
+    font-size: 1.25rem;
+    color: #ACACAC;
+}
+
+#joincontainer{
+    margin: 5%;
+    width: 35rem;
+    height: 80%;
+    background: white;
+    backdrop-filter: blur(25px);
+    border-radius: 2.75rem;
+    box-shadow: 0.25rem 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.1);
+}
+
+#login-href{
+    float: left;
+    color: #4FAF5A;
+}
