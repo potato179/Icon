@@ -70,7 +70,7 @@ function join(req, res, next){
         else{
             res.send({
                 condition: "fail",
-                message: "이미 있는 유저입니다. 다시하세요"
+                message: "이미 있는 유저입니다."
             });
         }
     });
