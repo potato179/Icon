@@ -335,9 +335,6 @@
                     $("#log_in_out").attr("onclick", 'window.location.href = "logout"');
                     var username = $.cookie("username");
                     $("#btn_join").html(username + "님, 반갑습니다");
-                    var t = document.getElementById("btn_join");
-                    t.style.color = "red";
-                    $("#btn_join").attr("onclick", '');
                 }
                 else{
                     console.log("쿠키가 존재하지 않습니다");
