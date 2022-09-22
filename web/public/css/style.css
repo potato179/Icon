@@ -375,7 +375,6 @@ hr{
 }
 
 #logintitle{
-    margin: 0;
     font-size: 2rem;
     font-weight: bold;
 }
@@ -425,7 +424,6 @@ hr{
     width: 35rem;
     height: 80%;
     background: white;
-    backdrop-filter: blur(25px);
     border-radius: 2.75rem;
     box-shadow: 0.25rem 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.1);
 }
