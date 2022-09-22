@@ -10,7 +10,11 @@ const port = "3000";
 const ps_users = require("./ps_users.js");
 const ps_items = require("./ps_items.js");
 const urls = [
-
+    {url: "/login", ps: ps_member.login},
+    {url: "/login.html", ps: ps_member.login_html},
+    {url: "/logout", ps: ps_member.logout},
+    {url: "/join", ps: ps_member.join},
+    {url: "/join.html", ps: ps_member.join_html}
 ];
 
 process.argv.forEach(function(item, index) {
