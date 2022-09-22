@@ -15,7 +15,7 @@ const urls = [
     {url: "/logout", ps: ps_users.logout},
     {url: "/join", ps: ps_users.join},
     {url: "/join.html", ps: ps_users.join_html},
-    {url: "/writequestion.html", ps: ps_items.writeitem_html}
+    {url: "/writeitem.html", ps: ps_items.writeitem_html}
 ];
 
 process.argv.forEach(function(item, index) {
