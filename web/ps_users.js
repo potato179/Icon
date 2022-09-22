@@ -57,7 +57,7 @@ function join(req, res, next){
         if (err) throw err;
 
         if(result[0] === undefined){
-            var q = `insert into users (name, email, phone, password) values ("${name}", "${email}, "${phone}", "${pw}");`
+            var q = `insert into users (name, email, phone, password) values ("${name}", "${email}", "${phone}", "${pw}");`
             con.query(q, function (err, result) {
                 if(err) throw err;
                 console.log(result);
