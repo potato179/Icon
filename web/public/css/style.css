@@ -433,3 +433,30 @@ hr{
     float: left;
     color: #4FAF5A;
 }
+
+#write-container{
+    margin-top: 3.75rem;
+    width: 100%;
+    align-items: center;
+}
+
+#write-container #title{
+    width: 100%;
+    text-align: center;
+}
+
+#write-container #title-input{
+    margin-top: 1.5rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    width: calc(90% - 5%); 
+    max-width: calc(1200px + 15% * 2);
+}
+
+#write-container #content-input{
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    width: calc(90% - 5%); 
+    max-width: calc(1200px + 15% * 2);
+}
