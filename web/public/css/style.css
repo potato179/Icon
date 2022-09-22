@@ -232,7 +232,7 @@ li a{
 #idea-container-2-card-content-progress{
     font-size: 1rem;
     margin: 0;
-    width: 10rem;
+    width: 50%  ;
     color: #4FAF5A;
     border: 0.1rem solid #4FAF5A;
     border-radius: 1rem;
@@ -241,6 +241,7 @@ li a{
 }
 
 #content-title{
+    margin-top: 0;
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
 }
