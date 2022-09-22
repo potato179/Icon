@@ -57,12 +57,51 @@
                 <p id = "logintitle">회원가입</p>
                 <input type = "text" id = "name" placeholder = "이름">
                 <input type = "email" id = "email" placeholder = "이메일">
-                <input type = "phone" id = "phone" placeholder = "이름">
+                <input type = "phone" id = "phone" placeholder = "전화번호">
                 <input type = "password" id = "pw" placeholder = "비밀번호">
                 <input type = "password" id = "pwc" placeholder = "비밀번호 확인">
                 <button id = "button-login">완료</button>
                 <p id = "login-section-text">이미 I:Con 계정이 있나요?&nbsp;<a href = "./login.html" id = "login-href">로그인</a></p>
             </div>  
         </div>
+        <script>
+            function join() {
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var pw = $("#pw").val();
+                var pwc = $("#pwc").val();
+                var sendData =  {name: name, email: email, pw: pw};
+
+                if(pw !== pwc){
+                    alert("비밀번호가 일치하지 않습니다.");
+                    return;
+                }
+
+                var ajaxData = { 
+                    type: "GET", 
+                    url : "join",
+                    data: sendData, 
+                    dataType: "json", 
+                    success :  onSuccess,
+                    error: onError
+                };
+                $.ajax(ajaxData);
+            }
+
+            function onSuccess (data, status, xhr) { 
+                console.log(data);
+                if(data.condition == "join"){
+                    alert(data.message);        
+                    window.location.href = "index.html"
+                }
+                else if(data.condition == "fail"){
+                    alert(data.message);        
+                }
+            }
+
+            function onError (jqXHR, textStatus, errorThrown) { 
+                console.log(jqXHR.responseText); 
+            }
+        </script>
     </body>
 </html>
