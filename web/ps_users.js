@@ -50,13 +50,14 @@ function logout(req, res, next){
 function join(req, res, next){
     var name = req.query.name;
     var email = req.query.email;
+    var phone = req.query.phone;
     var pw = req.query.pw;
     var q = `select * from users where email = "${email}"`;
     con.query(q, function (err, result) {
         if (err) throw err;
 
         if(result[0] === undefined){
-            var q = `insert into users (name, email, password) values ("${name}", "${email}, "${pw}");`
+            var q = `insert into users (name, email, phone, password) values ("${name}", "${email}, "${phone}", "${pw}");`
             con.query(q, function (err, result) {
                 if(err) throw err;
                 console.log(result);
