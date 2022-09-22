@@ -44,7 +44,7 @@ function login(req, res, next){
 
 function logout(req, res, next){
     res.cookie("userEmail", "");
-    res.sendFile('index.html', {root: __dirname});
+    res.sendFile("index.html", {root: __dirname});
 }
 
 function join(req, res, next){
