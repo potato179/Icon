@@ -67,7 +67,35 @@
         </div>
         
         <script>
+                        function signin(){
+                var email = $('#email').val();
+                var pw = $('#pw').val();
+                var sendData =  {email: email, pw: pw};
 
+                var ajaxData = { 
+                    type: "GET", 
+                    url : "login",
+                    data: sendData, 
+                    dataType: "json", 
+                    success :  onSuccess,
+                    error: onError
+                };
+                $.ajax(ajaxData);
+            }
+
+            function onSuccess (data, status, xhr) { 
+                if(data.condition == "success"){
+                    alert(data.message);        
+                    window.location.href = "index.html"
+                }
+                else if(data.condition == "fail"){
+                    alert(data.message);
+                }
+            }
+
+            function onError (jqXHR, textStatus, errorThrown) { 
+                console.log(jqXHR.responseText); 
+            }
         </script>
     </body>
 </html>
