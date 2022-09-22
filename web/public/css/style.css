@@ -269,7 +269,6 @@ hr{
 }
 
 #footer-top-container{
-    background-color: #F7F7F7;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -299,7 +298,6 @@ hr{
 }
 
 #footer-bottom-container{
-    background-color: #F7F7F7;
     padding: 2rem;
     margin: auto;
     display: flex;
