@@ -9,5 +9,9 @@ function ideas_html(req, res, next){
     res.sendFile("ideas.html", {root: __dirname});
 }
 
+function writeitem(req, res, next){
+    
+}
+
 exports.writeitem_html = writeitem_html;
 exports.ideas_html = ideas_html;
