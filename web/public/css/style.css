@@ -446,11 +446,12 @@ hr{
 }
 
 #write-container #title-input{
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     border-radius: 1rem;
     font-size: 1.5rem;
     width: calc(90% - 5%); 
     max-width: calc(1200px + 15% * 2);
+    padding: 0.5rem;
 }
 
 #write-container #content-input{
@@ -459,4 +460,6 @@ hr{
     font-size: 1.5rem;
     width: calc(90% - 5%); 
     max-width: calc(1200px + 15% * 2);
+    height: 25rem;
+    padding: 0.5rem;
 }
