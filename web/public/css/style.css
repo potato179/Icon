@@ -435,8 +435,8 @@ hr{
 }
 
 #write-container{
-    margin-top: 3.75rem;
-    width: 100%;
+    margin: 6rem;
+    width: calc(90% - 5%); 
     align-items: center;
 }
 
@@ -449,8 +449,7 @@ hr{
     margin-top: 0.5rem;
     border-radius: 1rem;
     font-size: 1.5rem;
-    width: calc(90% - 5%); 
-    max-width: calc(1200px + 15% * 2);
+    width: 100%;
     padding: 0.5rem;
 }
 
@@ -458,8 +457,18 @@ hr{
     margin-top: 0.5rem;
     border-radius: 1rem;
     font-size: 1.5rem;
-    width: calc(90% - 5%); 
-    max-width: calc(1200px + 15% * 2);
+    width: 100%; 
     height: 25rem;
+    padding: 0.5rem;
+}
+
+#write-container #uploadwrite{
+    margin-top: 0.5rem;
+    background: transparent;
+    background-color: #4FAF5A;
+    color: white;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    width: 100%;
     padding: 0.5rem;
 }
