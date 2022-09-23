@@ -56,9 +56,9 @@
         <div id = "write-container">
             <h1 id = "title">프로젝트 올리기</h1>
             <input id = "title-input" type = "text" placeholder = "제목">
-            <input id = "title-input" type = "text" placeholder = "목표 금액">
+            <input id = "fund-input" type = "text" placeholder = "목표 금액">
             <textarea id = "content-input" type = "text" placeholder = "내용"></textarea>
-            <button id = "uploadwrite">올리기</button>
+            <button id = "uploadwrite" onclick = "writeitem()">올리기</button>
         </div>
 
         <div id = "footer-top-container">
@@ -81,6 +81,10 @@
 
         <script src = "./public/js/jquery.cookie.js"></script>
         <script>
+            function writeitem(){
+                var title = $("#title-input").val();
+            }
+
             function logincookie(){
                 var userEmail = $.cookie("userEmail");
                 if(userEmail != '' && userEmail != null){
