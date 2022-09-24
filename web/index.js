@@ -17,6 +17,7 @@ const urls = [
     {url: "/join.html", ps: ps_users.join_html},
     {url: "/writeitem.html", ps: ps_items.writeitem_html},
     {url: "/ideas.html", ps: ps_items.ideas_html},
+    {url: "/view_idea.html", ps: ps_items.view_idea_html},
     {url: "/funds.html", ps: ps_items.funds_html}
 ];
 
