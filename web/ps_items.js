@@ -24,6 +24,11 @@ function ideas_html(req, res, next){
     res.sendFile("ideas.html", {root: __dirname});
 }
 
+function funds_html(req, res, next){
+    res.sendFile("funds.html", {root: __dirname});
+}
+
 exports.writeitem_html = writeitem_html;
 exports.writeitem = writeitem;
 exports.ideas_html = ideas_html;
+exports.funds_html = funds_html;
