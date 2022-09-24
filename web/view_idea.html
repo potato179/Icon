@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <script src = "https://kit.fontawesome.com/06fb83cb17.js" crossorigin = "anonymous"></script>
+        <script type = "text/javascript" src = "https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <link rel = "stylesheet" href = "./public/css/style.css">
+        <title>I:Con</title>
+    </head>
+    <body onload = "logincookie()">
+        <div id = "header-top-container">
+            <div id = "header-top">
+                <a id = "logo" href = "/"><img src = "./public/img/symbol.png"></a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <form id = "input">
+                    <input id = "input-search" type = "search" placeholder = "무더운 여름을 시원하게 보낼 수 있는 선풍기..." aria-label = "Search">
+                    <button id = "button-search"><img src = "./public/img/img_search.png"></button>
+                </form>
+                <div id = "button-container">
+                    <button id = "log_in_out" class = "button" onclick = "location.href = './login.html'">로그인/회원가입</button>
+                    <button class = "button" onclick = "location.href = './writeitem.html'">프로젝트 올리기</button>
+                </div>
+                <!--
+                    <div class = "dropdown text-end">
+                        <a href = "#" class = "d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle = "dropdown" aria-expanded = "false">
+                            <img src = "https://github.com/mdo.png" alt = "mdo" class = "rounded-circle" width = "32" height = "32">
+                        </a>
+                        <ul class = "dropdown-menu text-small">
+                            <li><a class = "dropdown-item" href = "#"><i class = "fas fa-user"></i> 내 프로필 </a></li>
+                            <li><a class = "dropdown-item" href = "#"><i class = "fas fa-comment"></i> 채팅</a></li>
+                            <li><a class = "dropdown-item" href = "#"><i class = "fas fa-parking"></i> 내 프로젝트</a></li>
+                            <li><a class = "dropdown-item" href = "#"><i class = "fas fa-archive"></i> 보관함</a></li>
+                            <li><a class = "dropdown-item" href = "#"><i class = "fas fa-cog"></i> 설정</a></li>
+                            <li><hr class = "dropdown-divider"></li>    
+                            <li><a class = "dropdown-item" href = "#">로그아웃</a></li>
+                        </ul>
+                    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                -->
+    
+            </div>
+        </div>
+        <div id = "header-bottom-container">       
+            <div id = "header-bottom">
+                <ul>
+                    <li><a href = "/">홈</a></li>
+                    <li><a href = "#">아이디어</a></li>
+                    <li><a href = "#">펀딩</a></li>
+                    <li><a href = "#">투자</a></li>
+                    <li><a href = "#">공지사항</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id = "write-container">
+            <h1 id = "title">프로젝트 올리기</h1>
+            <input id = "title-input" type = "text" placeholder = "제목">
+            <input id = "fund-input" type = "text" placeholder = "목표 금액">
+            <textarea id = "content-input" type = "text" placeholder = "내용"></textarea>
+            <button id = "uploadwrite" onclick = "writeitem()">올리기</button>
+        </div>
+
+        <div id = "footer-top-container">
+            <div id = "footer-top">
+                <ul>
+                    <li><a href = "/">홈</a></li>
+                    <li><a href = "./ideas.html">아이디어</a></li>
+                    <li><a href = "./funds.html">펀딩</a></li>
+                    <li><a href = "#">투자</a></li>
+                    <li><a href = "#">공지사항</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id = "footer-bottom-container">
+            <div id = "footer-bottom">
+                <img src="./public/img/logo_title_black.png" alt="" id="footer-logo">
+                <p id = "footer-content"><b>대표</b> 오신재 | <b>대표번호</b> 010- | <b>사업자등록번호</b> 309-<br><b>주소</b> 경기도 안산시 단원구 사세충열로 94 | <b>e-mail</b> hackg179@gmail.com</p>
+            </div>
+        </div>
+
+        <script src = "./public/js/jquery.cookie.js"></script>
+        <script>
+            function writeitem(){
+                var title = $("#title-input").val();
+                var fund_rate = $("fund-input").val();
+                var content = $("content-input").val();
+                var sendData = {title: title, fund_rate: fund_rate, content: content}
+            }
+
+            function logincookie(){
+                var userEmail = $.cookie("userEmail");
+                if(userEmail != '' && userEmail != null){
+                    console.log("쿠키 존재: " + userEmail);
+                    $("#log_in_out").html("로그아웃");
+                    $("#log_in_out").attr("onclick", 'window.location.href = "logout"');
+                    var username = $.cookie("username");
+                    $("#btn_join").html(username + "님, 반갑습니다");
+                }
+                else{
+                    console.log("쿠키가 존재하지 않습니다");
+                    $("#log_in_out").html("로그인/회원가입");
+                    $("#log_in_out").attr("onclick", 'window.location.href = "login.html"');
+                }
+            }
+        </script>
+    </body>
+</html>
