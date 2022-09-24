@@ -445,7 +445,7 @@ hr{
     text-align: center;
 }
 
-#write-container #title-input{
+#write-container #title-input, #fund-input{
     margin-top: 0.5rem;
     border-radius: 1rem;
     font-size: 1.5rem;

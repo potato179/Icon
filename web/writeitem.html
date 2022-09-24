@@ -83,6 +83,9 @@
         <script>
             function writeitem(){
                 var title = $("#title-input").val();
+                var fund_rate = $("fund-input").val();
+                var content = $("content-input").val();
+                var sendData = {title: title, fund_rate: fund_rate, content: content}
             }
 
             function logincookie(){
