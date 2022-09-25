@@ -316,8 +316,11 @@
         <script src = "./public/js/jquery.cookie.js"></script>
         <script>
             $(".animated-progress span").each(function(){
+                var progress_rate = $(this).attr("data-progress");
+                if(progress_rate > 100) progress_rate = 100;
+                
                 $(this).animate({
-                    width: $(this).attr("data-progress") + "%",
+                    width: `${progress_rate}%`,
                 }, 1000);
                 $(this).text($(this).attr("data-progress") + "%");
             });
