@@ -565,7 +565,7 @@ hr{
 .animated-progress {
     width: 100%;
     height: 1rem;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     border: 0.1rem solid #4FAF5A;
     overflow: hidden;
     position: relative;
@@ -579,7 +579,7 @@ hr{
     font-size: 0.9rem;
     line-height: 1rem;
     position: absolute;
-    padding-right: 0.25rem;
+    padding-right: 0.3rem;
     text-align: end;
     background-color: #4FAF5A;
 }
