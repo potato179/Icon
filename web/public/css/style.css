@@ -526,3 +526,34 @@ hr{
 #fuxking_img{    
     width: calc(70% - 5%); 
 }
+
+#invest{
+    width: 1280px;
+    height: 780px;
+    background-image:url(../img/로그인페이지\ 이미지.png)
+}
+
+#invest-text{
+    text-align: center;
+}
+
+#invest-button{
+    font-size: 1rem;
+    margin: 0;
+    width: 30px  ;
+    color: #4FAF5A;
+    border: 0.1rem solid #4FAF5A;
+    border-radius: 1rem;
+    text-align: center;
+    background-color: white;
+}
+
+#invest-button:hover{
+    font-size: 1rem;
+    margin: 0;
+    width: 30px  ;
+    color: #ffffff;
+    border-radius: 1rem;
+    text-align: center;
+    background-color: #4FAF5A;
+}
