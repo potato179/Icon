@@ -557,3 +557,7 @@ hr{
     text-align: center;
     background-color: #4FAF5A;
 }
+
+.row{
+    width: inherit;
+}
