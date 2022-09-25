@@ -561,3 +561,25 @@ hr{
 .row{
     width: inherit;
 }
+
+.animated-progress {
+    width: 100%;
+    height: 1rem;
+    border-radius: 5px;
+    border: 0.1rem solid #4FAF5A;
+    overflow: hidden;
+    position: relative;
+}
+
+.animated-progress span {
+    height: 100%;
+    display: block;
+    width: 0;
+    color: rgb(255, 251, 251);
+    font-size: 0.9rem;
+    line-height: 1rem;
+    position: absolute;
+    padding-right: 0.25rem;
+    text-align: end;
+    background-color: #4FAF5A;
+}

@@ -187,15 +187,18 @@
                         <div id = "idea-container-1-card">
                             <img src = "./public/img/추카팡_도안.png" alt = "d" id = "idea-container-1-card-image">
                             <div id = "idea-container-1-card-content">
-                                <p id = "content-title">더 즐거운 파티를 위한 추카팡</p> <br>
+                                <p id = "content-title">더 즐거운 파티를 위한 추카팡</p>
                                 <p id = "content-author">ohsinagian님 아이디어</p><br>
+                                <div class = "animated-progress">
+                                    <span data-progress = "882"></span>
+                                </div>
                             </div>
                         </a>
                         </div>
                         <div id = "idea-container-1-card">
                             <img src = "./public/img/타투스티커.png" alt = "d" id = "idea-container-1-card-image">
                             <div id = "idea-container-1-card-content">
-                                <p id = "content-title">내가 직접 그려서 붙이는 타투스티커</p> <br>
+                                <p id = "content-title">내가 직접 그려서 붙이는 타투스티커</p>
                                 <p id = "content-author">solebye님 아이디어</p><br>
                             </div>
                         </div>
@@ -209,7 +212,7 @@
                         <div id = "idea-container-1-card">
                             <img src = "./public/img/스튜디오 사진관.png" alt = "d" id = "idea-container-1-card-image">
                             <div id = "idea-container-1-card-content">
-                                <p id = "content-title">원하는대로 주문하는 스튜디오 사진관</p> <br>
+                                <p id = "content-title">원하는대로 주문하는 스튜디오 사진관</p>
                                 <p id = "content-author">megabook님 아이디어</p><br>
                             </div>
                         </div>
@@ -312,6 +315,13 @@
 
         <script src = "./public/js/jquery.cookie.js"></script>
         <script>
+            $(".animated-progress span").each(function(){
+                $(this).animate({
+                    width: $(this).attr("data-progress") + "%",
+                }, 1000);
+                $(this).text($(this).attr("data-progress") + "%");
+            });
+  
             function logincookie(){
                 var userEmail = $.cookie("userEmail");
                 if(userEmail != '' && userEmail != null){
