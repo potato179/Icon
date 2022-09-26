@@ -1,0 +1,6 @@
+logs
+*.log
+*.tgz
+node_modules/
+public/js/mysql_con.js
+.DS_Store

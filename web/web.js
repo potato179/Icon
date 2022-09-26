@@ -1,11 +1,11 @@
-const http = require("http");
+//const http = require("http");
 const express = require("express");
 const app = express();
 const mysqlconfig = require("./public/js/mysql_con.js");
 const con = mysqlconfig.con;
 
 const hostname = "127.0.0.1";
-const port = "3000";
+const port = "8001";
 
 const ps_users = require("./ps_users.js");
 const ps_items = require("./ps_items.js");
@@ -29,14 +29,14 @@ process.argv.forEach(function(item, index) {
 
 app.use("/public", express.static("public"));
 
-app.listen(port, hostname, () => {
-    console.log(port, hostname);
-});
-
 app.get("/", function(req, res, next){
     res.sendfile("index.html", {root: __dirname});
 });
 
 urls.forEach(function(element, index){
     app.get(element.url, element.ps);
+});
+
+app.listen(port, () => {
+    console.log(port, hostname);
 });
